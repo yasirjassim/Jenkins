@@ -1,0 +1,26 @@
+pipeline(
+  agent any
+  stages{
+   stage("Checkout Code'){
+     steps{
+        git branch:'main', url:'https://github.com/yasirjassim/Jenkins.git'
+
+       }
+      }
+      stage('Bulld'){
+         steps{
+           bat 'echo "building the app"'
+          }
+         }
+         stage('Test'){
+           steps{
+             bat 'echo "Running tests"'
+            }
+           }
+           stage("Deploy'){
+             steps{
+               bat sh 'echo "deploying"'
+              }
+             }
+            }
+           }
